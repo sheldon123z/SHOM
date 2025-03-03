@@ -1,0 +1,20 @@
+
+env_name: 34Bus # choose from 13Bus 34Bus 123Bus 8500Node
+#random seed
+seed: 123456
+#maximum number of steps
+num_steps: 24
+
+#number of parallel processes
+num_workers: None
+use_plot: False
+do_testing: False
+#running mode, random, parallele, episodic or dss
+mode: single
+#whether to use S
+useS: False
+# whether to order S from big to small
+big2small: False
+# whether to convey the information of the voltage node
+use_render: False
+record_node: False # 添加一个记录节点信息的开关
