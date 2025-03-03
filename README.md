@@ -37,17 +37,16 @@ python powerzoo/main.py --help
 Please cite the following paper if you use this repo for scientific research:
 
 [1] X. Zheng, S. Yu, H. Cao, T. Shi, S. Xue, and T. Dingc, “Sensitivity-Based Heterogeneous Ordered Multi-Agent Reinforcement Learning for Distributed Volt-Var Control in Active Distribution Network,” IEEE Transactions on Smart Grid, pp. 1–1, Feb. 2025, doi: 10.1109/TSG.2025.3540416.
-
-
-@article{zhengSensitivityBasedHeterogeneousOrdered2025,<br>
-  &emsp;title = {Sensitivity-Based Heterogeneous Ordered Multi-Agent Reinforcement Learning for Distributed Volt-Var Control in Active Distribution Network},<br>
-  &emsp;author = {Zheng, Xiaodong and Yu, Shixuan and Cao, Hui and Shi, Tianzhuo and Xue, Shuangsi and Ding, Tao},<br>
-  &emsp;journal = {IEEE Transactions on Smart Grid},<br>
-  &emsp;year = {2025}, <br>
-  &emsp;month = Feb, <br>
-  &emsp;doi = {10.1109/TSG.2025.3540416},<br>
-  &emsp;issn = {1949-3061},<br>
-  &emsp;url = {https://ieeexplore.ieee.org/document/10879343},<br>
-  &emsp;urldate = {2025-02-12}<br>
+```
+@article{zhengSensitivityBasedHeterogeneousOrdered2025,
+  author  = {Xiaodong Zheng and Shixuan Yu and Hui Cao and Tianzhuo Shi and Shuangsi Xue and Tao Ding},
+  title   = {Sensitivity-Based Heterogeneous Ordered Multi-Agent Reinforcement Learning for Distributed Volt-Var Control in Active Distribution Network},
+  journal = {IEEE Transactions on Smart Grid},
+  year    = {2025},
+  month   = {Feb},
+  doi     = {10.1109/TSG.2025.3540416},
+  issn    = {1949-3061},
+  url     = {https://ieeexplore.ieee.org/document/10879343},
+  urldate = {2025-02-12}
 }
-
+```
