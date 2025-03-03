@@ -6,7 +6,6 @@ PowerZoo 是一个基于 python 和 opendss 的电力系统强化学习仿真环
 
 ## 安装：
 
-
 ```
 git clone https://github.com/XJTU-RL/PowerZoo.git
 ```
@@ -21,19 +20,20 @@ conda activate powerzoo
 
 ## 快速开始
 
-
 ```
 python examples/train.py
 ```
 
-
 ## 环境变量
-
-
 ```
 python powerzoo/main.py --help
 ```
+Roadmap
+- [x] Volt-Var Regulation (SHOM)
+- [ ] Frequency Regulation (OHASAC)
+- [ ] RL based EVCS Control 
 
+---
 Please cite the following paper if you use this repo for scientific research:
 
 [1] X. Zheng, S. Yu, H. Cao, T. Shi, S. Xue, and T. Dingc, “Sensitivity-Based Heterogeneous Ordered Multi-Agent Reinforcement Learning for Distributed Volt-Var Control in Active Distribution Network,” IEEE Transactions on Smart Grid, pp. 1–1, Feb. 2025, doi: 10.1109/TSG.2025.3540416.
@@ -50,3 +50,4 @@ Please cite the following paper if you use this repo for scientific research:
   urldate = {2025-02-12}
 }
 ```
+
