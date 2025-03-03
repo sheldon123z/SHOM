@@ -422,4 +422,4 @@ examples/results/
 newplot/
 newplot/logs/
 experiment/
-newplot/*
+newplot/
