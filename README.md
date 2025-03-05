@@ -36,7 +36,7 @@ Roadmap
 ---
 Please cite the following paper if you use this repo for scientific research:
 
-[1] X. Zheng, S. Yu, H. Cao, T. Shi, S. Xue, and T. Dingc, “Sensitivity-Based Heterogeneous Ordered Multi-Agent Reinforcement Learning for Distributed Volt-Var Control in Active Distribution Network,” IEEE Transactions on Smart Grid, pp. 1–1, Feb. 2025, doi: 10.1109/TSG.2025.3540416.
+[1] X. Zheng, S. Yu, H. Cao, T. Shi, S. Xue, and T. Ding, “Sensitivity-Based Heterogeneous Ordered Multi-Agent Reinforcement Learning for Distributed Volt-Var Control in Active Distribution Network,” IEEE Transactions on Smart Grid, pp. 1–1, Feb. 2025, doi: 10.1109/TSG.2025.3540416.
 ```
 @article{zhengSensitivityBasedHeterogeneousOrdered2025,
   author  = {Xiaodong Zheng and Shixuan Yu and Hui Cao and Tianzhuo Shi and Shuangsi Xue and Tao Ding},
