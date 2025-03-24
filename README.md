@@ -31,7 +31,8 @@ python powerzoo/main.py --help
 Roadmap
 - [x] Volt-Var Regulation (SHOM)
 - [ ] Frequency Regulation (OHASAC)
-- [ ] RL based EVCS Control 
+- [ ] RL based EVCS Control
+- [ ] RL based Hybrid Energy System
 
 ---
 Please cite the following paper if you use this repo for scientific research:
