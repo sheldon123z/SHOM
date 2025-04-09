@@ -1,3 +1,34 @@
+# -*- coding: utf-8 -*-
+"""
+@File      : off_policy_base_runner.py
+@Time      : 2025-04-08 17:41
+@Author    : Xiaodong Zheng
+@Email     : zxd_xjtu@stu.xjtu.edu.cn
+@Description: 此文件实现了一个用于离线策略算法的基础运行器 `OffPolicyBaseRunner`，用于训练和评估智能体模型。
+- 关键组件及职责：
+  - `OffPolicyBaseRunner` 类：初始化运行环境、智能体模型、经验回放缓冲区等。
+    - `__init__` 方法：初始化类的属性，设置随机种子、设备，创建环境，初始化智能体和评论家模型，设置价值归一化器等。
+    - `run` 方法：运行训练或渲染流程，包括热身、训练和评估。
+    - `warmup` 方法：用随机动作对经验回放缓冲区进行热身。
+    - `insert` 方法：将环境交互数据插入经验回放缓冲区。
+    - `sample_actions` 方法：为热身阶段采样随机动作。
+    - `get_actions` 方法：为智能体获取动作。
+    - `train` 方法：训练模型，需在子类中实现。
+    - `eval` 方法：评估模型性能。
+    - `render` 方法：渲染模型运行结果。
+    - `restore` 方法：恢复模型参数。
+    - `save` 方法：保存模型参数。
+    - `close` 方法：关闭环境、写入器和日志文件。
+- 工作流程：
+  1. 初始化运行器，设置环境、模型等。
+  2. 进行热身，填充经验回放缓冲区。
+  3. 开始训练，与环境交互并更新模型。
+  4. 定期评估模型性能。
+  5. 保存模型参数。
+  6. 结束时关闭相关资源。
+
+该代码依赖 `torch`、`numpy` 等库，使用 `setproctitle` 设置进程名，通过 `ValueNorm` 进行价值归一化，使用 `Categorical` 进行动作采样。
+"""
 """Base runner for off-policy algorithms."""
 import os
 import time

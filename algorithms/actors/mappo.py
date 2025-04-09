@@ -1,3 +1,23 @@
+# -*- coding: utf-8 -*-
+"""
+@File      : mappo.py
+@Time      : 2025-04-08 17:46
+@Author    : Xiaodong Zheng
+@Email     : zxd_xjtu@stu.xjtu.edu.cn
+@Description: 此文件实现了多智能体近端策略优化（MAPPO）算法，用于多智能体强化学习场景。
+- 关键组件及职责：
+  - `MAPPO` 类：继承自 `OnPolicyBase`，负责 MAPPO 算法的核心逻辑。
+    - `__init__` 方法：初始化 MAPPO 算法，设置关键参数。
+    - `update` 方法：更新 actor 网络，计算策略损失、熵、梯度范数和重要性采样权重。
+    - `train` 方法：使用小批量梯度下降对非参数共享 MAPPO 执行训练更新。
+    - `share_param_train` 方法：使用小批量梯度下降对参数共享 MAPPO 执行训练更新。
+- 工作流程：
+  1. 初始化算法参数。
+  2. 根据训练数据生成样本。
+  3. 调用 `update` 方法更新 actor 网络。
+  4. 重复步骤 2 - 3 多次，完成训练。
+- 依赖库：`numpy`、`torch`、`torch.nn`，以及自定义的 `utils.envs_tools`、`utils.models_tools` 和 `algorithms.actors.on_policy_base` 模块。
+"""
 """MAPPO algorithm."""
 import numpy as np
 import torch

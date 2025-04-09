@@ -1,3 +1,24 @@
+# -*- coding: utf-8 -*-
+"""
+@File      : Qmix_runner.py
+@Time      : 2025-04-08 17:40
+@Author    : Xiaodong Zheng
+@Email     : zxd_xjtu@stu.xjtu.edu.cn
+@Description: 该文件实现了一个基于QMIX算法的多智能体强化学习运行器，用于多智能体粒子环境（MPE）。
+关键组件及职责：
+- QMIXRunner类：继承自MlpRunner，管理环境交互、数据收集、训练和日志记录。
+    - __init__方法：初始化运行器，根据策略共享情况选择收集方法，可进行渲染或热身。
+    - eval方法：收集评估回合，计算并记录评估信息。
+    - use_render方法：收集渲染回合，记录渲染信息。
+    - shared_collect_rollout方法：所有智能体共享一个策略时，收集回合并存储在缓冲区，适时训练。
+    - separated_collect_rollout方法：每个智能体有自己的策略时，收集回合并存储在缓冲区，适时训练。
+    - log方法：记录环境、训练等信息。
+    - log_env方法：记录环境信息。
+    - log_clear方法：清空环境信息。
+    - warmup方法：用随机动作填充回放缓冲区。
+
+工作流程：初始化后，可选择渲染或热身，之后根据不同模式收集回合，存储数据并训练，同时记录信息。
+"""
 #import wandb
 import numpy as np
 from itertools import chain

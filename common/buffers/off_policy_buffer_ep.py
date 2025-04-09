@@ -1,3 +1,17 @@
+# -*- coding: utf-8 -*-
+"""
+@File      : off_policy_buffer_ep.py
+@Time      : 2025-04-08 17:49
+@Author    : Xiaodong Zheng
+@Email     : zxd_xjtu@stu.xjtu.edu.cn
+@Description: 该文件实现了一个使用环境提供（EP）状态的离策略缓冲区 `OffPolicyBufferEP`，继承自 `OffPolicyBufferBase`。
+- `__init__` 方法：初始化离策略缓冲区，接收参数并创建多个缓冲区数组，用于存储共享观测、奖励、完成和终止标志等。
+- `sample` 方法：为训练采样数据，更新结束标志，随机选择索引，获取相应数据，计算累积奖励和折扣因子，根据动作空间类型返回采样数据。
+- `next` 方法：根据当前索引计算下一个索引。
+- `update_end_flag` 方法：更新当前结束标志，用于计算 n 步回报，结束标志在回合结束或最新未完成步骤处为真。
+
+该文件依赖 `numpy` 和 `torch` 库，主要用于存储和处理数据以及随机采样。
+"""
 """Off-policy buffer."""
 import numpy as np
 import torch

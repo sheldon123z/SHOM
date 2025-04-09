@@ -1,3 +1,27 @@
+# -*- coding: utf-8 -*-
+"""
+@File      : base_logger.py
+@Time      : 2025-04-08 17:48
+@Author    : Xiaodong Zheng
+@Email     : zxd_xjtu@stu.xjtu.edu.cn
+@Description: 此文件定义了 `BaseLogger` 类，用于在基于策略的训练流程中记录各类信息。
+- 关键组件及职责：
+  - `BaseLogger` 类：
+    - `__init__`：初始化日志记录器，打开多个日志文件，记录算法和环境参数。
+    - `get_task_name`：获取任务名称，需子类实现。
+    - `init`：初始化日志记录器，记录开始时间、总回合数等。
+    - `episode_init`：为每个回合初始化日志记录器。
+    - `per_step`：处理每一步的数据，更新回合奖励。
+    - `episode_log`：记录每个回合的信息，包括总步数、训练奖励等。
+    - `eval_init`：为评估阶段初始化日志记录器。
+    - `eval_per_step`：记录评估阶段每一步的信息。
+    - `eval_thread_done`：记录评估线程完成时的信息。
+    - `eval_log`：记录评估阶段的信息，如平均回合奖励。
+    - `log_train`：记录训练信息。
+    - `log_env`：记录环境信息。
+    - `close`：关闭日志文件。
+- 依赖库：`time`、`os`、`numpy`。
+"""
 """Base logger."""
 
 import time

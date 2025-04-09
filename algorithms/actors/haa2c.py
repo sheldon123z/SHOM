@@ -1,3 +1,25 @@
+# -*- coding: utf-8 -*-
+"""
+@File      : haa2c.py
+@Time      : 2025-04-08 17:46
+@Author    : Xiaodong Zheng
+@Email     : zxd_xjtu@stu.xjtu.edu.cn
+@Description: 该文件实现了 HAA2C（Hierarchical Advantage Actor-Critic）算法，用于强化学习中的策略优化。
+- 关键组件及职责：
+  - HAA2C 类：继承自 OnPolicyBase，负责实现 HAA2C 算法。
+    - __init__ 方法：初始化 HAA2C 算法的参数。
+    - update 方法：根据给定的数据样本更新 actor 网络，返回策略损失、动作熵、梯度范数和重要性采样权重。
+    - train 方法：使用小批量梯度下降进行训练更新，返回训练信息。
+- 依赖库：
+  - numpy、torch、torch.nn：用于数值计算和深度学习。
+  - utils.envs_tools.check：用于数据检查。
+  - utils.models_tools.get_grad_norm：用于获取梯度范数。
+  - algorithms.actors.on_policy_base.OnPolicyBase：作为基类提供基础功能。
+- 工作流程：
+  - 在初始化时设置算法参数。
+  - 调用 update 方法根据数据样本更新 actor 网络。
+  - 调用 train 方法进行多轮训练更新，记录训练信息。
+"""
 """HAA2C algorithm."""
 import numpy as np
 import torch

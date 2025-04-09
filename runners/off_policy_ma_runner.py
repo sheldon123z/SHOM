@@ -1,3 +1,17 @@
+# -*- coding: utf-8 -*-
+"""
+@File      : off_policy_ma_runner.py
+@Time      : 2025-04-08 17:41
+@Author    : Xiaodong Zheng
+@Email     : zxd_xjtu@stu.xjtu.edu.cn
+@Description: 该文件是一个用于离线策略多智能体（MA）算法的运行器脚本，借助 PyTorch 实现。
+- `OffPolicyMARunner` 类：继承自 `OffPolicyBaseRunner`，负责运行离线策略多智能体算法。
+  - `train` 方法：
+    - 从缓冲区采样数据，包括共享观测、智能体观测、动作等多种数据。
+    - 训练评论家网络（critic）：先开启梯度，计算下一动作，调用 `critic.train` 方法训练，再关闭梯度。
+    - 按指定频率训练行动者网络（actor）：开启梯度，计算动作，获取价值预测，计算损失并更新参数，最后关闭梯度。
+    - 执行软更新：更新行动者和评论家网络的目标网络参数。
+"""
 """Runner for off-policy MA algorithms"""
 import copy
 import torch

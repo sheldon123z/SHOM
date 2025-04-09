@@ -1,3 +1,27 @@
+# -*- coding: utf-8 -*-
+"""
+@File      : powerzoo_logger.py
+@Time      : 2025-04-08 17:51
+@Author    : Xiaodong Zheng
+@Email     : zxd_xjtu@stu.xjtu.edu.cn
+@Description: 此文件定义了 PowerZooLogger 类，用于记录和管理电力系统强化学习训练与评估过程中的信息。
+- 继承 BaseLogger 类，在初始化时接收多种参数。
+- get_task_name 方法：返回环境名称。
+- init 方法：初始化记录器，包括记录时间、剧集数和各类奖励、物理量数组。
+- episode_init 方法：初始化每个 episode 的记录器。
+- per_step 方法：处理每步数据，更新训练奖励和物理量。
+- episode_log 方法：记录 episode 的日志信息，包括训练信息和平均奖励。
+- eval_init 方法：初始化评估过程，创建多个奖励和物理量列表。
+- eval_per_step 方法：记录评估过程中的奖励和物理量。
+- eval_thread_done 方法：记录每个评估线程的结束信息。
+- eval_log 方法：记录评估信息，写入日志文件。
+- log_train 方法：记录训练信息到 tensorboard。
+- log_env 方法：记录环境信息到 tensorboard。
+- close 方法：关闭日志文件。
+- get_result 方法：获取训练和评估的结果。
+
+该类依赖 common.base_logger、time、textwrap 和 numpy 库。
+"""
 from common.base_logger import BaseLogger
 import time
 from textwrap import dedent

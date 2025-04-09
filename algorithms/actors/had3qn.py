@@ -1,3 +1,18 @@
+# -*- coding: utf-8 -*-
+"""
+@File      : had3qn.py
+@Time      : 2025-04-08 17:47
+@Author    : Xiaodong Zheng
+@Email     : zxd_xjtu@stu.xjtu.edu.cn
+@Description: 该文件实现了 HAD3QN 算法，用于处理离散动作空间的强化学习任务。
+- 关键依赖库：`numpy`、`torch`，还依赖自定义模块 `DuelingQNet`、`check` 和 `OffPolicyBase`。
+- 关键类：
+  - `HAD3QN`：继承自 `OffPolicyBase`，负责初始化算法参数、网络模型和优化器。
+- 关键方法：
+  - `get_actions`：根据观测值获取动作，支持 epsilon-greedy 策略。
+  - `get_target_actions`：根据观测值获取目标网络的动作。
+  - `train_values`：根据观测值和动作获取带梯度的 Q 值。
+"""
 """HAD3QN algorithm."""
 from copy import deepcopy
 import numpy as np

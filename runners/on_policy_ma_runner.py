@@ -1,3 +1,19 @@
+# -*- coding: utf-8 -*-
+"""
+@File      : on_policy_ma_runner.py
+@Time      : 2025-04-08 17:40
+@Author    : Xiaodong Zheng
+@Email     : zxd_xjtu@stu.xjtu.edu.cn
+@Description: 该文件是用于执行基于策略的多智能体（MA）算法的运行器脚本。
+- 导入了 `numpy`、`torch` 库以及 `OnPolicyBaseRunner` 类。
+- `OnPolicyMARunner` 类继承自 `OnPolicyBaseRunner`，用于执行基于策略的 MA 算法。
+  - `train` 方法：实现了 MAPPO 算法的训练流程。
+    - 计算优势函数，会根据 `value_normalizer` 是否存在采用不同计算方式。
+    - 若状态类型为 "FP"，对优势函数进行归一化处理。
+    - 根据 `share_param` 情况更新智能体的策略网络。
+    - 更新批评家网络。
+    - 最后返回策略网络和批评家网络的训练信息。
+"""
 """Runner for on-policy MA algorithms."""
 import numpy as np
 import torch

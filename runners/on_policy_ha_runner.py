@@ -1,3 +1,24 @@
+# -*- coding: utf-8 -*-
+"""
+@File      : on_policy_ha_runner.py
+@Time      : 2025-04-08 17:41
+@Author    : Xiaodong Zheng
+@Email     : zxd_xjtu@stu.xjtu.edu.cn
+@Description: 此文件为基于策略的 HA 算法运行器，继承自 OnPolicyBaseRunner，核心功能是训练模型。
+- 关键组件及职责：
+  - OnPolicyHARunner 类：继承 OnPolicyBaseRunner，负责训练模型。
+  - train 方法：具体实现训练逻辑。
+- 工作流程：
+  1. 初始化因子 factor。
+  2. 计算优势值 advantages。
+  3. 若状态类型为 FP，对优势值进行归一化。
+  4. 若 useS 为 True，对信息进行汇总、排序。
+  5. 根据 ordered 和 useS 确定 agent 顺序。
+  6. 按顺序更新每个 agent 的 actor 网络，并更新因子。
+  7. 更新 critic 网络。
+  8. 返回 actor 和 critic 的训练信息。
+- 依赖库：numpy、torch，工具模块 utils.trans_tools，基类模块 runners.on_policy_base_runner。
+"""
 """Runner for on-policy PowerZoo algorithms."""
 import numpy as np
 import torch

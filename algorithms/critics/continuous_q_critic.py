@@ -1,3 +1,28 @@
+# -*- coding: utf-8 -*-
+"""
+@File      : continuous_q_critic.py
+@Time      : 2025-04-08 17:45
+@Author    : Xiaodong Zheng
+@Email     : zxd_xjtu@stu.xjtu.edu.cn
+@Description: 此 Python 文件实现了一个连续 Q 评论家（Continuous Q Critic），用于学习连续动作空间中的 Q 函数。
+- 关键组件及职责：
+  - `ContinuousQCritic` 类：核心类，负责初始化评论家及相关参数，管理训练过程。
+    - `__init__` 方法：初始化评论家，设置设备、动作空间、优化器等参数。
+    - `lr_decay` 方法：衰减评论家的学习率。
+    - `soft_update` 方法：软更新目标网络。
+    - `get_values` 方法：获取 Q 值。
+    - `train` 方法：训练评论家。
+    - `save` 方法：保存模型。
+    - `restore` 方法：恢复模型。
+    - `turn_on_grad` 方法：开启评论家的梯度计算。
+    - `turn_off_grad` 方法：关闭评论家的梯度计算。
+- 依赖库：
+  - `torch`：用于深度学习计算。
+  - `deepcopy`：用于复制模型。
+  - `ContinuousQNet`：连续 Q 网络模型。
+  - `check`：环境工具函数。
+  - `update_linear_schedule`：线性学习率衰减工具函数。
+"""
 """Continuous Q Critic."""
 from copy import deepcopy
 import torch

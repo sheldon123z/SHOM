@@ -1,3 +1,23 @@
+# -*- coding: utf-8 -*-
+"""
+@File      : twin_continuous_q_critic.py
+@Time      : 2025-04-08 17:45
+@Author    : Xiaodong Zheng
+@Email     : zxd_xjtu@stu.xjtu.edu.cn
+@Description: 该文件实现了一个名为 TwinContinuousQCritic 的类，用于在连续动作空间中学习两个 Q 函数的双连续 Q 批评家模型。
+- TwinContinuousQCritic 类：负责整个双连续 Q 批评家模型的管理和操作。
+    - __init__ 方法：初始化批评家模型，包括创建两个 Q 网络、目标网络，设置超参数和优化器。
+    - lr_decay 方法：对批评家的学习率进行线性衰减。
+    - soft_update 方法：对目标网络进行软更新。
+    - get_values 方法：根据给定的观察和动作获取 Q 值。
+    - train 方法：训练批评家模型，计算并最小化损失。
+    - save 方法：保存模型参数到指定目录。
+    - restore 方法：从指定目录恢复模型参数。
+    - turn_on_grad 方法：开启批评家网络的梯度计算。
+    - turn_off_grad 方法：关闭批评家网络的梯度计算。
+
+该模型依赖于 torch 库进行深度学习相关操作，还使用了 itertools、copy 库，以及自定义的 ContinuousQNet、check 和 update_linear_schedule 模块。
+"""
 """Twin Continuous Q Critic."""
 import itertools
 from copy import deepcopy

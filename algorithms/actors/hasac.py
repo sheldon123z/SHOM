@@ -1,3 +1,19 @@
+# -*- coding: utf-8 -*-
+"""
+@File      : hasac.py
+@Time      : 2025-04-08 17:46
+@Author    : Xiaodong Zheng
+@Email     : zxd_xjtu@stu.xjtu.edu.cn
+@Description: 此文件实现了 HASAC 算法，用于处理不同类型的动作空间，主要包含一个类和多个方法。
+- `HASAC` 类：继承自 `OffPolicyBase`，用于初始化和管理算法相关参数与模型。
+  - `__init__` 方法：初始化类的属性，根据动作空间类型选择合适的策略模型，并创建优化器。
+  - `get_actions` 方法：根据输入的观测值获取动作，支持随机或确定性动作。
+  - `get_actions_with_logprobs` 方法：获取动作及对应的对数概率，支持不同动作空间类型。
+  - `save` 方法：将 actor 模型保存到指定路径。
+  - `restore` 方法：从指定路径恢复 actor 模型。
+
+该算法依赖 `torch` 库进行深度学习计算，同时使用了自定义的模型和工具模块。
+"""
 """HASAC algorithm."""
 import torch
 from models.policy_models.squashed_gaussian_policy import SquashedGaussianPolicy

@@ -1,3 +1,23 @@
+# -*- coding: utf-8 -*-
+"""
+@File      : on_policy_critic_buffer_ep.py
+@Time      : 2025-04-08 17:49
+@Author    : Xiaodong Zheng
+@Email     : zxd_xjtu@stu.xjtu.edu.cn
+@Description: 该文件实现了一个用于使用环境提供（EP）状态的评论家（critic）的策略内缓冲区。
+主要包含以下组件及职责：
+- OnPolicyCriticBufferEP类：
+    - __init__方法：初始化缓冲区，设置各种参数和创建存储数据的数组。
+    - insert方法：将数据插入到缓冲区中。
+    - after_update方法：更新后，将最后一步的数据复制到缓冲区的起始位置。
+    - get_mean_rewards方法：计算奖励的平均值用于日志记录。
+    - compute_returns方法：计算回报，可以选择使用广义优势估计（GAE）。
+    - feed_forward_generator_critic方法：为使用MLP网络的评论家生成训练数据。
+    - naive_recurrent_generator_critic方法：为使用RNN网络的评论家生成训练数据，不分割轨迹。
+    - recurrent_generator_critic方法：为使用RNN网络的评论家生成训练数据，分割轨迹为数据块。
+
+该代码依赖torch、numpy库，以及utils.envs_tools和utils.trans_tools模块。工作时，通过初始化设置缓冲区，插入数据后可进行更新、计算回报等操作，最后为不同网络结构的评论家生成训练数据。
+"""
 """On-policy buffer for critic that uses Environment-Provided (EP) state."""
 import torch
 import numpy as np

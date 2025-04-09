@@ -1,3 +1,29 @@
+# -*- coding: utf-8 -*-
+"""
+@File      : Qmix_base_runner.py
+@Time      : 2025-04-08 17:41
+@Author    : Xiaodong Zheng
+@Email     : zxd_xjtu@stu.xjtu.edu.cn
+@Description: 此 Python 文件主要实现了一个用于训练 MLP 策略的运行器（Runner），支持多智能体环境下的训练。
+- 关键组件及职责：
+  - DictToClass：将字典转换为类对象，便于参数访问。
+  - MlpRunner：
+    - 初始化：创建环境、算法、缓冲区、写入器等，设置超参数。
+    - run：执行训练流程，包括数据收集、保存、日志记录和评估。
+    - batch_train：对所有策略进行梯度更新。
+    - batch_train_q：对策略进行 Q 学习更新。
+    - save：保存所有策略。
+    - save_q：保存 Q 学习相关策略。
+    - restore：从预训练模型加载策略。
+    - restore_q：从预训练模型加载 Q 学习相关策略。
+    - warmup：填充回放缓冲区。
+    - log_env：记录环境相关信息。
+    - log_train：记录训练相关信息。
+    - collect_rollout：收集数据并存储到缓冲区。
+    - close：关闭环境、写入器和日志文件。
+- 依赖库：os、numpy、torch、tensorboardX 等，用于文件操作、数值计算、深度学习和日志记录。
+- 工作流程：初始化环境和策略，进行数据收集和训练，定期保存模型、记录日志和评估性能。
+"""
 import os
 #import wandb
 import numpy as np

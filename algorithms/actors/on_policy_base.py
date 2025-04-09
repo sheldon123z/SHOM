@@ -1,3 +1,22 @@
+# -*- coding: utf-8 -*-
+"""
+@File      : on_policy_base.py
+@Time      : 2025-04-08 17:45
+@Author    : Xiaodong Zheng
+@Email     : zxd_xjtu@stu.xjtu.edu.cn
+@Description: 此文件定义了一个 `OnPolicyBase` 类，作为基于策略算法的基类，为基于策略的算法提供基础功能。
+- `__init__` 方法：初始化类的实例，保存参数、观察和动作空间，创建并优化演员网络。
+- `lr_decay` 方法：衰减学习率。
+- `get_actions` 方法：根据输入计算动作。
+- `evaluate_actions` 方法：获取动作对数概率、熵和分布。
+- `act` 方法：使用输入计算动作。
+- `update` 方法：更新演员网络（待实现）。
+- `train` 方法：使用小批量梯度下降进行训练（待实现）。
+- `prep_training` 方法：为训练做准备。
+- `prep_rollout` 方法：为滚动（rollout）做准备。
+
+该文件依赖 `torch`、`StochasticPolicy` 和 `update_linear_schedule`。
+"""
 """Base class for on-policy algorithms."""
 
 import torch

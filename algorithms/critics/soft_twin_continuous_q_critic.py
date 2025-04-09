@@ -1,3 +1,23 @@
+# -*- coding: utf-8 -*-
+"""
+@File      : soft_twin_continuous_q_critic.py
+@Time      : 2025-04-08 17:45
+@Author    : Xiaodong Zheng
+@Email     : zxd_xjtu@stu.xjtu.edu.cn
+@Description: 该文件实现了 SoftTwinContinuousQCritic 类，用于学习两个软 Q 函数，可处理连续和离散动作空间。
+- 关键组件及职责：
+  - SoftTwinContinuousQCritic 类：继承自 TwinContinuousQCritic，核心类。
+    - __init__ 方法：初始化批评家，设置参数和优化器。
+    - update_alpha 方法：自动调整温度参数 alpha。
+    - get_values 方法：获取给定观测和动作的软 Q 值。
+    - train 方法：训练批评家，计算并更新损失。
+- 工作流程：
+  1. 初始化时设置参数和优化器。
+  2. 根据需要自动调整 alpha。
+  3. 获取观测和动作的软 Q 值。
+  4. 训练时计算目标 Q 值，根据损失函数更新批评家。
+- 依赖库：numpy、torch、torch.nn.functional，以及自定义的模块。
+"""
 """Soft Twin Continuous Q Critic."""
 import numpy as np
 import torch

@@ -1,3 +1,23 @@
+# -*- coding: utf-8 -*-
+"""
+@File      : shom.py
+@Time      : 2025-04-08 17:46
+@Author    : Xiaodong Zheng
+@Email     : zxd_xjtu@stu.xjtu.edu.cn
+@Description: 该文件实现了 SHOM 算法，用于更新智能体的策略网络，主要功能是在强化学习中基于 PPO 算法对演员网络进行训练。
+- 关键组件及职责：
+  - SHOM 类：继承自 OnPolicyBase，负责初始化算法参数和更新演员网络。
+    - __init__ 方法：初始化 SHOM 算法的各项参数。
+    - update 方法：根据给定样本更新演员网络，返回策略损失、动作熵、梯度范数和重要性采样权重。
+    - train 方法：使用小批量梯度下降法进行训练，返回训练信息。
+- 工作流程：
+  1. 在初始化时设置算法参数。
+  2. 训练时，根据状态类型处理优势值。
+  3. 多次迭代，从数据生成器获取样本。
+  4. 调用 update 方法更新网络并记录训练信息。
+  5. 最后返回平均训练信息。
+- 依赖库：numpy、torch、torch.nn，以及自定义的 utils.envs_tools、utils.models_tools 和 algorithms.actors.on_policy_base 模块。
+"""
 """SHOM algorithm."""
 import numpy as np
 import torch

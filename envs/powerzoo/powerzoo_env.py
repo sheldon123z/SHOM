@@ -1,3 +1,27 @@
+# -*- coding: utf-8 -*-
+"""
+@File      : powerzoo_env.py
+@Time      : 2025-04-08 17:51
+@Author    : Xiaodong Zheng
+@Email     : zxd_xjtu@stu.xjtu.edu.cn
+@Description: 此 Python 文件旨在实现一个电力系统仿真环境 `PowerZooEnv`，用于多智能体强化学习实验。
+- 关键库：使用 `gym` 进行环境管理，`numpy` 进行数值计算，`imageio` 与 `matplotlib.pyplot` 用于可能的图像操作。
+- 关键函数：
+  - `seeding`：设置随机种子，保证结果可复现。
+- 关键类：
+  - `PowerZooEnv`：
+    - 初始化时创建环境，确定智能体数量和名称，设置动作和观测空间。
+    - `step`：执行动作，返回局部观测、全局状态、奖励、终止信息等。
+    - `reset`：重置环境，返回初始观测和状态。
+    - `get_avail_actions`：获取所有智能体可用动作。
+    - `get_avail_agent_actions`：获取单个智能体可用动作。
+    - `render`：预留渲染功能。
+    - `close`：关闭环境，移除并行 DSS。
+    - `seed`：设置环境随机种子。
+    - `unwrap`：处理观测数据。
+    - `get_env_action_space`：拆分动作空间给各智能体。
+    - `repeat`：复制观测空间。
+"""
 import copy
 import gym
 from gym.spaces import Discrete,Box,MultiDiscrete

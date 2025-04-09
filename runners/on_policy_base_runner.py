@@ -1,3 +1,37 @@
+# -*- coding: utf-8 -*-
+"""
+@File      : on_policy_base_runner.py
+@Time      : 2025-04-08 17:40
+@Author    : Xiaodong Zheng
+@Email     : zxd_xjtu@stu.xjtu.edu.cn
+@Description: 此 Python 文件实现了同策略算法的基础运行器 `OnPolicyBaseRunner`，用于训练和评估智能体策略。
+- 核心功能：
+  - 初始化环境、智能体、缓冲区和日志记录器。
+  - 执行训练、评估和渲染操作。
+  - 管理模型的保存和恢复。
+- 关键组件及职责：
+  - `OnPolicyBaseRunner` 类：管理整个训练和评估流程。
+    - `__init__` 方法：初始化参数、环境、智能体、缓冲区和日志记录器。
+    - `run` 方法：执行训练或渲染流程。
+    - `warmup` 方法：预热重播缓冲区。
+    - `collect` 方法：收集智能体的动作和值。
+    - `insert` 方法：将数据插入缓冲区。
+    - `compute` 方法：计算回报和优势。
+    - `train` 方法：训练模型（待实现）。
+    - `after_update` 方法：更新后进行必要的数据操作。
+    - `eval` 方法：评估模型。
+    - `render` 方法：渲染模型。
+    - `prep_rollout` 方法：为采样做准备。
+    - `prep_training` 方法：为训练做准备。
+    - `save` 方法：保存模型参数。
+    - `restore` 方法：恢复模型参数。
+    - `close` 方法：关闭环境、记录器等。
+    - `get_result` 方法：获取训练结果。
+- 依赖库：
+  - `json`、`time`、`os`、`numpy`、`torch` 等基础库。
+  - `setproctitle` 用于设置进程标题。
+  - 自定义的 `common`、`algorithms`、`utils`、`envs` 模块。
+"""
 """Base runner for on-policy algorithms."""
 import json
 import time

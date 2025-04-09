@@ -1,3 +1,22 @@
+# -*- coding: utf-8 -*-
+"""
+@File      : on_policy_actor_buffer.py
+@Time      : 2025-04-08 17:49
+@Author    : Xiaodong Zheng
+@Email     : zxd_xjtu@stu.xjtu.edu.cn
+@Description: 该文件实现了一个用于存储和处理演员（actor）数据的策略内缓冲区 `OnPolicyActorBuffer` 类。
+- 核心功能是为基于策略梯度的强化学习算法提供数据存储和批量生成功能。
+- 关键组件及职责：
+  - `OnPolicyActorBuffer` 类：初始化时根据参数创建多个缓冲区，用于存储观测、循环神经网络状态、动作等数据。
+    - `__init__` 方法：根据参数初始化各类缓冲区。
+    - `update_factor` 方法：保存因子数据。
+    - `insert` 方法：将新数据插入到缓冲区。
+    - `after_update` 方法：更新后将最后一步数据复制到缓冲区起始位置。
+    - `feed_forward_generator_actor` 方法：为使用多层感知机网络的演员生成训练数据。
+    - `naive_recurrent_generator_actor` 方法：为使用循环神经网络的演员生成训练数据，不拆分轨迹。
+    - `recurrent_generator_actor` 方法：为使用循环神经网络的演员生成训练数据，拆分轨迹为指定长度的块。
+- 依赖库：`torch`、`numpy`，以及 `utils` 模块中的 `_flatten`、`_sa_cast`、`get_shape_from_obs_space` 和 `get_shape_from_act_space` 工具函数。
+"""
 """On-policy buffer for actor."""
 
 import torch

@@ -1,3 +1,29 @@
+# -*- coding: utf-8 -*-
+"""
+@File      : discrete_q_critic.py
+@Time      : 2025-04-08 17:44
+@Author    : Xiaodong Zheng
+@Email     : zxd_xjtu@stu.xjtu.edu.cn
+@Description: 此 Python 文件实现了一个离散 Q 批评家（Discrete Q Critic），用于学习离散动作空间中的 Q 函数。
+关键组件及职责如下：
+- DiscreteQCritic 类：核心类，管理批评家的初始化、训练、更新等操作。
+    - __init__ 方法：初始化批评家，包括网络、优化器等参数。
+    - lr_decay 方法：衰减批评家的学习率。
+    - soft_update 方法：软更新目标网络。
+    - get_values 方法：获取给定观测和动作的 Q 值。
+    - train_values 方法：训练批评家。
+    - train 方法：更新批评家网络参数。
+    - process_action_spaces 方法：处理动作空间。
+    - joint_to_indiv 方法：将联合动作转换为个体动作。
+    - indiv_to_joint 方法：将个体动作转换为联合动作。
+    - get_joint_idx 方法：获取某个智能体的可用联合索引。
+    - save 方法：保存模型参数。
+    - restore 方法：恢复模型参数。
+    - turn_on_grad 方法：开启批评家的梯度计算。
+    - turn_off_grad 方法：关闭批评家的梯度计算。
+
+依赖的关键库有 torch、copy 以及自定义的 DuelingQNet、check 和 update_linear_schedule。
+"""
 """Discrete Q Critic."""
 from copy import deepcopy
 import torch

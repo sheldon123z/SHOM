@@ -1,3 +1,23 @@
+# -*- coding: utf-8 -*-
+"""
+@File      : hatrpo.py
+@Time      : 2025-04-08 17:46
+@Author    : Xiaodong Zheng
+@Email     : zxd_xjtu@stu.xjtu.edu.cn
+@Description: 此文件实现了 HATRPO（Hindsight Actor Trust Region Policy Optimization）算法，用于优化策略网络。
+- 关键组件及职责：
+  - `HATRPO` 类：继承自 `OnPolicyBase`，负责实现 HATRPO 算法。
+    - `__init__` 方法：初始化 HATRPO 算法，接收参数、观测空间、动作空间和设备信息。
+    - `update` 方法：更新演员网络，输入数据批次，输出 KL 散度、损失改进等信息。
+    - `train` 方法：使用小批量梯度下降进行训练更新，输入演员缓冲区、优势和状态类型，输出训练信息。
+- 工作流程：
+  1. 初始化算法，设置 KL 阈值、线搜索步骤等参数。
+  2. 在 `update` 方法中，计算动作概率、损失和梯度。
+  3. 使用共轭梯度法求解步长方向。
+  4. 进行回溯线搜索，更新参数并检查更新效果。
+  5. 在 `train` 方法中，根据不同策略类型生成数据生成器，多次调用 `update` 方法更新网络。
+- 依赖库：`numpy`、`torch`，以及自定义的工具模块。
+"""
 """HATRPO algorithm."""
 
 import numpy as np

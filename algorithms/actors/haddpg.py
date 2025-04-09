@@ -1,3 +1,25 @@
+# -*- coding: utf-8 -*-
+"""
+@File      : haddpg.py
+@Time      : 2025-04-08 17:45
+@Author    : Xiaodong Zheng
+@Email     : zxd_xjtu@stu.xjtu.edu.cn
+@Description: 该文件实现了HADDPG（Hierarchical Actor - Critic Deep Deterministic Policy Gradient）算法，属于离线策略算法。
+- 关键组件及职责：
+  - HADDPG类：继承自OffPolicyBase，用于实现HADDPG算法的核心逻辑。
+    - __init__方法：初始化HADDPG算法所需的参数、策略网络、目标网络和优化器。
+    - get_actions方法：根据观测值获取动作，可选择是否添加噪声。
+    - get_target_actions方法：根据观测值获取目标策略网络的动作。
+- 依赖模块：
+  - deepcopy：用于复制对象。
+  - torch：用于构建和训练神经网络。
+  - DeterministicPolicy：用于定义确定性策略网络。
+  - check：用于检查输入数据。
+  - OffPolicyBase：离线策略算法的基类。
+- 输入输出：
+  - 输入：观测值、是否添加噪声的标志。
+  - 输出：动作张量。
+"""
 """HADDPG algorithm."""
 from copy import deepcopy
 import torch

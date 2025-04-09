@@ -1,3 +1,23 @@
+# -*- coding: utf-8 -*-
+"""
+@File      : on_policy_critic_buffer_fp.py
+@Time      : 2025-04-08 17:49
+@Author    : Xiaodong Zheng
+@Email     : zxd_xjtu@stu.xjtu.edu.cn
+@Description: 该文件实现了一个用于使用特征修剪（FP）状态的评论家的策略内缓冲区 `OnPolicyCriticBufferFP`。
+关键组件及职责如下：
+- `OnPolicyCriticBufferFP` 类：
+    - `__init__` 方法：初始化缓冲区，设置参数和创建存储数据的数组。
+    - `insert` 方法：将数据插入缓冲区。
+    - `after_update` 方法：更新后将最后一步的数据复制到缓冲区的第一个位置。
+    - `get_mean_rewards` 方法：计算奖励的平均值。
+    - `compute_returns` 方法：计算回报，支持 GAE 和普通折扣奖励计算。
+    - `feed_forward_generator_critic` 方法：为使用 MLP 网络的评论家生成训练数据。
+    - `naive_recurrent_generator_critic` 方法：为使用 RNN 网络的评论家生成训练数据，不分割轨迹。
+    - `recurrent_generator_critic` 方法：为使用 RNN 网络的评论家生成训练数据，分割轨迹为数据块。
+
+该类依赖 `torch`、`numpy` 库，以及 `utils` 模块中的 `get_shape_from_obs_space`、`_flatten` 和 `_ma_cast` 函数。
+"""
 """On-policy buffer for critic that uses Feature-Pruned (FP) state."""
 import torch
 import numpy as np

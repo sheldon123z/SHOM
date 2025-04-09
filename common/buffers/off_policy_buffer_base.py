@@ -1,3 +1,24 @@
+# -*- coding: utf-8 -*-
+"""
+@File      : off_policy_buffer_base.py
+@Time      : 2025-04-08 17:49
+@Author    : Xiaodong Zheng
+@Email     : zxd_xjtu@stu.xjtu.edu.cn
+@Description: 此文件实现了一个用于存储和管理经验数据的离线策略缓存（Off - Policy Buffer）基类。
+- 关键组件：
+  - `OffPolicyBufferBase` 类：用于初始化和管理离线策略缓存。
+    - `__init__` 方法：初始化缓存的参数，包括缓存大小、批量大小等，
+      并根据输入的共享观测空间、观测空间和动作空间初始化相应的缓存数组。
+    - `insert` 方法：将数据插入到缓存中，处理插入时的溢出情况，
+      并更新当前插入索引和缓存的占用大小。
+    - `sample` 方法：预留方法，未实现具体逻辑。
+    - `next` 方法：预留方法，未实现具体逻辑。
+    - `update_end_flag` 方法：预留方法，未实现具体逻辑。
+    - `get_mean_rewards` 方法：计算缓存中奖励的平均值。
+- 依赖库：
+  - `numpy`：用于数组操作和数值计算。
+  - `utils.envs_tools`：提供获取观测空间和动作空间形状的工具函数。
+"""
 """Off-policy buffer."""
 import numpy as np
 from utils.envs_tools import get_shape_from_obs_space, get_shape_from_act_space

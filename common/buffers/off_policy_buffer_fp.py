@@ -1,3 +1,18 @@
+# -*- coding: utf-8 -*-
+"""
+@File      : off_policy_buffer_fp.py
+@Time      : 2025-04-08 17:48
+@Author    : Xiaodong Zheng
+@Email     : zxd_xjtu@stu.xjtu.edu.cn
+@Description: 该文件实现了一个使用特征修剪（FP）状态的离线策略缓冲区 `OffPolicyBufferFP`，主要用于存储和采样多智能体强化学习的数据。
+- 关键组件及职责：
+  - `OffPolicyBufferFP` 类：继承自 `OffPolicyBufferBase`，负责管理离线策略缓冲区。
+    - `__init__` 方法：初始化缓冲区，接收参数并创建存储共享观测、奖励、终止标志等的数组。
+    - `sample` 方法：从缓冲区中采样数据用于训练，处理数据索引和计算累积奖励及对应折扣因子。
+    - `next` 方法：根据当前索引获取下一个索引。
+    - `update_end_flag` 方法：更新当前结束标志，用于计算 n 步回报。
+- 依赖库：`numpy` 用于数组操作，`torch` 用于随机采样，`OffPolicyBufferBase` 作为基类提供基础功能。
+"""
 """Off-policy buffer."""
 import numpy as np
 import torch

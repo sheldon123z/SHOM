@@ -1,3 +1,19 @@
+# -*- coding: utf-8 -*-
+"""
+@File      : valuenorm.py
+@Time      : 2025-04-08 17:48
+@Author    : Xiaodong Zheng
+@Email     : zxd_xjtu@stu.xjtu.edu.cn
+@Description: 该文件实现了 `ValueNorm` 类，用于对观测向量进行归一化和反归一化操作。
+- `ValueNorm` 类：继承自 `nn.Module`，用于对输入向量跨前 `norm_axes` 个维度进行归一化。
+  - `__init__` 方法：初始化类的参数，包括输入形状、归一化轴数、衰减系数等，并初始化运行均值、运行平方均值和去偏项。
+  - `running_mean_var` 方法：计算去偏的均值和方差。
+  - `update` 方法：根据输入向量更新运行均值、运行平方均值和去偏项。
+  - `normalize` 方法：对输入向量进行归一化处理。
+  - `denormalize` 方法：将归一化后的数据转换回原始分布。
+
+该类依赖 `numpy` 和 `torch` 库。
+"""
 """ValueNorm."""
 import numpy as np
 import torch

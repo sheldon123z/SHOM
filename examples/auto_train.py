@@ -1,3 +1,21 @@
+# -*- coding: utf-8 -*-
+"""
+@File      : auto_train.py
+@Time      : 2025-04-08 17:39
+@Author    : Xiaodong Zheng
+@Email     : zxd_xjtu@stu.xjtu.edu.cn
+@Description: 该 Python 脚本的主要作用是使用 Optuna 库对强化学习算法的超参数进行优化。
+- 关键组件及职责：
+  - load_yaml_config：加载 YAML 配置文件。
+  - save_yaml_config：保存 YAML 配置文件。
+  - objective：Optuna 的目标函数，用于超参数优化，返回加权奖励。
+  - main：执行 Optuna 超参数优化的主函数。
+- 工作流程：
+  1. 通过命令行参数设置环境、试验次数、算法等信息。
+  2. 从配置文件或 YAML 文件加载配置，并更新参数。
+  3. 创建 Optuna study，进行超参数优化。
+  4. 输出最佳试验结果，并保存最佳配置到 YAML 文件。
+"""
 import argparse
 import json
 import sys

@@ -1,3 +1,22 @@
+# -*- coding: utf-8 -*-
+"""
+@File      : v_critic.py
+@Time      : 2025-04-08 17:45
+@Author    : Xiaodong Zheng
+@Email     : zxd_xjtu@stu.xjtu.edu.cn
+@Description: 此文件实现了一个用于学习 V 函数的 VCritic 类，主要用于在强化学习中更新和训练价值网络。
+- 关键组件及职责：
+  - VCritic 类：核心类，负责管理和更新价值网络。
+    - __init__ 方法：初始化参数、创建 VNet 实例和优化器。
+    - lr_decay 方法：衰减学习率。
+    - get_values 方法：获取价值函数预测值。
+    - cal_value_loss 方法：计算价值函数损失。
+    - update 方法：更新价值网络。
+    - train 方法：使用小批量梯度下降进行训练。
+    - prep_training 方法：为训练做准备。
+    - prep_rollout 方法：为收集数据做准备。
+- 依赖库：torch、torch.nn，以及 utils 模块中的工具函数和 VNet 类。
+"""
 """V Critic."""
 import torch
 import torch.nn as nn

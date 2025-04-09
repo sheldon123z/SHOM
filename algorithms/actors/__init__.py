@@ -1,3 +1,15 @@
+# -*- coding: utf-8 -*-
+"""
+@File      : __init__.py
+@Time      : 2025-04-08 17:47
+@Author    : Xiaodong Zheng
+@Email     : zxd_xjtu@stu.xjtu.edu.cn
+@Description: 该文件的主要作用是创建一个算法注册表，用于管理和存储多种算法类。
+- 关键组件 `ALGO_REGISTRY`：是一个字典，作为算法注册表。
+- 职责：将算法的名称字符串（如 "happo"）映射到对应的算法类（如 HAPPO）。
+- 依赖模块：从 `algorithms.actors` 导入了多个算法类，包括 HAPPO、HATRPO 等。
+通过此注册表，可以方便地根据算法名称获取对应的算法类，便于后续的算法调用和使用。
+"""
 """Algorithm registry."""
 from algorithms.actors.happo import HAPPO
 from algorithms.actors.hatrpo import HATRPO

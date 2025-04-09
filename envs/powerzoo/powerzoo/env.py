@@ -1,3 +1,24 @@
+# -*- coding: utf-8 -*-
+"""
+@File      : env.py
+@Time      : 2025-04-08 17:51
+@Author    : Xiaodong Zheng
+@Email     : zxd_xjtu@stu.xjtu.edu.cn
+@Description: 该文件是一个用于训练强化学习（RL）代理的Python脚本，用于模拟和控制电力系统。
+- 辅助函数：
+  - `plotting`：绘制网络状态与负载曲线，并保存为图片。
+  - `FFT_selection`：采用最远优先遍历算法从违规节点中选择电池位置。
+  - `choose_batteries`：根据环境状态选择电池安装位置。
+  - `get_basekv`：获取指定母线的基准电压。
+- `ActionSpace`类：封装电容器、调压器和电池的动作空间，支持离散和连续动作采样。
+- `Env`类：作为训练RL代理的环境，主要职责包括：
+  - 初始化环境参数，如DSS文件路径、负载曲线、电路拓扑等。
+  - 重置观测空间，根据包装和负载选项调整观测空间。
+  - 定义奖励函数，包括功率损耗、控制动作、电压违规等奖励项。
+  - 实现`step`和`reset`方法，分别用于执行环境步骤和重置环境状态。
+  - 提供绘图功能，可视化电力系统的网络状态。
+  - 支持随机动作采样和虚拟动作生成。
+"""
 # Copyright 2021 Siemens Corporation
 # SPDX-License-Identifier: MIT
 

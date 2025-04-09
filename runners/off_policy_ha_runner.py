@@ -1,3 +1,24 @@
+# -*- coding: utf-8 -*-
+"""
+@File      : off_policy_ha_runner.py
+@Time      : 2025-04-08 17:41
+@Author    : Xiaodong Zheng
+@Email     : zxd_xjtu@stu.xjtu.edu.cn
+@Description: 此文件是用于离线策略（off-policy）HA算法的运行器脚本，继承自`OffPolicyBaseRunner`类。
+- 关键组件及其职责：
+  - `OffPolicyHARunner`类：核心类，负责训练模型。
+  - `train`方法：实现模型训练逻辑。
+    - 从缓冲区采样数据。
+    - 根据算法类型（如`hasac`、`had3qn`）训练评论员网络（critic）。
+    - 按一定频率训练演员网络（actor），不同算法有不同训练方式。
+    - 若启用自动调整，训练演员网络的`alpha`参数。
+    - 执行软更新操作更新网络参数。
+- 依赖库：
+  - `torch`：用于深度学习相关操作。
+  - `numpy`：用于数值计算。
+  - `torch.nn.functional`：提供神经网络的函数接口。
+  - `runners.off_policy_base_runner`：提供离线策略运行器的基础类。
+"""
 """Runner for off-policy PowerZoo algorithms."""
 import torch
 import numpy as np

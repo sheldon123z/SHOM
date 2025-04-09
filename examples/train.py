@@ -1,3 +1,22 @@
+# -*- coding: utf-8 -*-
+"""
+@File      : train.py
+@Time      : 2025-04-08 17:38
+@Author    : Xiaodong Zheng
+@Email     : zxd_xjtu@stu.xjtu.edu.cn
+@Description: 此 Python 文件的主要作用是训练算法。它允许用户通过命令行参数选择算法、环境、实验名称，并加载配置文件。
+- 关键组件及职责：
+  - `argparse`：处理命令行参数，提供参数选择和默认值。
+  - `json`：用于从配置文件中加载配置信息。
+  - `get_defaults_yaml_args`：从 yaml 文件中获取默认配置参数。
+  - `update_args`：更新参数。
+  - `RUNNER_REGISTRY`：根据所选算法运行训练。
+- 工作流程：
+  1. 解析命令行参数。
+  2. 若指定加载配置文件，则从文件加载；否则从 yaml 文件加载。
+  3. 更新参数。
+  4. 启动相应的训练器进行训练，训练结束后关闭。
+"""
 """Train an algorithm."""
 import argparse
 import json

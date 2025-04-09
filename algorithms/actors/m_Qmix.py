@@ -1,3 +1,28 @@
+# -*- coding: utf-8 -*-
+"""
+@File      : m_Qmix.py
+@Time      : 2025-04-08 17:47
+@Author    : Xiaodong Zheng
+@Email     : zxd_xjtu@stu.xjtu.edu.cn
+@Description: 此文件实现了 M_QMix 类，用于训练和更新 QMIX 算法模型，支持多智能体强化学习场景。
+- 关键组件及职责：
+  - M_QMix 类：负责初始化、训练和更新 QMIX 模型。
+    - __init__ 方法：初始化参数、网络、优化器等。
+    - train_policy_on_batch 方法：根据批量数据训练策略，计算损失并更新参数。
+    - hard_target_updates 方法：硬更新目标网络。
+    - soft_target_updates 方法：软更新目标网络。
+    - prep_training 方法：将网络设置为训练模式。
+    - prep_rollout 方法：将网络设置为评估模式。
+- 工作流程：
+  1. 初始化网络和目标网络。
+  2. 从批量数据中提取观测、动作、奖励等信息。
+  3. 计算个体智能体的 Q 值。
+  4. 使用混合网络计算总 Q 值。
+  5. 计算目标 Q 值和损失。
+  6. 更新网络参数。
+  7. 定期更新目标网络。
+- 依赖库：torch、numpy、copy，以及自定义的 M_QMixer、PopArt 等模块。
+"""
 import torch
 import copy
 from models.value_function_models.mq_mixer import M_QMixer
