@@ -1,3 +1,55 @@
+# -*- coding: utf-8 -*-
+"""
+@File      : circuit.py
+@Time      : 2025-04-08 17:52
+@Author    : Xiaodong Zheng
+@Email     : zxd_xjtu@stu.xjtu.edu.cn
+@Description: 此 Python 文件用于构建电力系统电路模型并进行相关分析，借助 OpenDSS 模拟器对电路进行模拟和计算。
+1. **关键组件及职责**
+    - **Circuits 类**：核心类，用于初始化和管理电路模型。
+        - `__init__`：初始化电路对象，读取 DSS 文件和电池文件。
+        - `set_regulator_parameters`：设置所有调节器参数。
+        - `compile`：编译主 DSS 文件。
+        - `reset`：重置电路状态。
+        - `initialize`：初始化并生成所有数据成员。
+        - `get_all_capacitor_statuses`：获取所有电容器状态。
+        - `set_all_capacitor_statuses`：设置所有电容器状态。
+        - `get_all_regulator_tapnums`：获取所有调节器抽头数。
+        - `set_all_regulator_tappings`：设置所有调节器抽头值。
+        - `set_all_batteries_before_solve`：在求解前设置所有电池状态。
+        - `set_all_batteries_after_solve`：在求解后更新所有电池状态。
+        - `_get_edge_name`：计算所有边上的对象名称。
+        - `_gen_reg_obj`：生成所有调节器对象。
+        - `_gen_trans_obj`：生成所有变压器对象。
+        - `_gen_line_obj`：生成所有线路对象。
+        - `_gen_load_cap_obj`：生成所有负载和电容器对象。
+        - `_gen_bat_obj`：生成所有电池对象。
+        - `__cal_edgeWei_busPhase`：计算边权重和每个母线的相数。
+        - `bus_voltage`：获取母线电压。
+        - `get_Y_matrix`：获取导纳矩阵。
+        - `get_Y_matrix_acc`：提取并返回排序后的导纳矩阵，支持稀疏和 GPU 加速。
+        - `get_node_sensity`：计算节点的无功电压敏感度。
+        - `get_node_sensity_acc`：计算节点的无功电压敏感度，支持稀疏运算和噪声模拟。
+        - `get_agent_bus_dict`：提取设备到总线 - 相位映射的字典。
+        - `edge_current`：获取边上的电流。
+        - `total_loss`：获取总损耗。
+        - `total_power`：获取总功率。
+        - `add_lines`：添加线路对象。
+        - `add_transformers`：添加变压器对象。
+        - `add_regulators`：添加调节器对象。
+        - `add_capacitors`：添加电容器对象。
+        - `add_loads`：添加负载对象。
+        - `add_batteries`：添加电池对象。
+    - **Edge 类及子类**：表示电路中的边对象，如线路、变压器和调节器。
+    - **Node 类及子类**：表示电路中的节点对象，如负载、电容器和电池。
+2. **工作流程**
+    - 初始化 `Circuits` 对象，读取 DSS 文件和电池文件。
+    - 编译 DSS 文件，生成电路拓扑和对象。
+    - 可以设置调节器、电容器和电池的参数和状态。
+    - 求解电路，获取电压、电流、损耗和功率等信息。
+    - 计算节点的无功电压敏感度。
+3. **依赖库**：依赖 `networkx`、`numpy`、`pandas`、`scipy`、`cupy` 和 `dss` 等库。
+"""
 # Copyright 2021 Siemens Corporation
 # SPDX-License-Identifier: MIT
 
