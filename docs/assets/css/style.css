@@ -592,18 +592,19 @@ body {
    ALGORITHM VISUALIZATION
    ============================================ */
 .algorithm-visual {
-  background: var(--white);
+  background: #ffffff !important;
   border-radius: 20px;
   padding: var(--space-xl);
   margin: var(--space-xl) 0;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-  border: 1px solid var(--light-gray);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  border: 2px solid #e2e8f0;
 }
 
 .algorithm-visual img {
   width: 100%;
   border-radius: 12px;
-  background: var(--white);
+  background: #ffffff !important;
+  padding: 1rem;
 }
 
 /* ============================================
