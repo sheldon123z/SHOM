@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SHOM: Sensitivity-based Heterogeneous Ordered Multi-agent Reinforcement Learning for Distributed Volt-Var Control in Active Distribution Networks - IEEE Transactions on Smart Grid 2025">
+  <meta name="keywords" content="Multi-agent Reinforcement Learning, Volt-Var Control, Active Distribution Network, Smart Grid, MARL, Deep Learning">
+  <meta name="author" content="Xiaodong Zheng, Shixuan Yu, Hui Cao, Tianzhuo Shi, Shuangsi Xue, Tao Ding">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="SHOM - Multi-agent RL for Smart Grid Control">
+  <meta property="og:description" content="A novel approach to Volt-Var Control in Active Distribution Networks using Sensitivity-based Heterogeneous Ordered MARL">
+  <meta property="og:type" content="website">
+
+  <title>SHOM | IEEE TSG 2025</title>
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+</head>
+<body>
+
+  <!-- Language Toggle -->
+  <div class="lang-toggle">
+    <button class="lang-btn active" data-lang="en">EN</button>
+    <button class="lang-btn" data-lang="zh">中文</button>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <!-- Journal Badge -->
+      <div class="journal-badge">
+        <span lang="en">IEEE Transactions on Smart Grid • 2025</span>
+        <span lang="zh">IEEE Transactions on Smart Grid • 2025</span>
+      </div>
+
+      <!-- Title -->
+      <h1 class="hero-title">
+        <span lang="en">
+          <span class="highlight">Sensitivity-based</span> Heterogeneous Ordered<br>
+          Multi-agent Reinforcement Learning for<br>
+          Distributed Volt-Var Control
+        </span>
+        <span lang="zh">
+          基于<span class="highlight">灵敏度</span>的异构有序<br>
+          多智能体强化学习用于<br>
+          主动配电网分布式电压无功控制
+        </span>
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="hero-subtitle">
+        <span lang="en">A novel MARL approach leveraging voltage-reactive sensitivity to guide sequential policy updates for heterogeneous devices in Active Distribution Networks</span>
+        <span lang="zh">一种新型的多智能体强化学习方法，利用电压-无功灵敏度指导主动配电网中异构设备的顺序策略更新</span>
+      </p>
+
+      <!-- Authors -->
+      <div class="authors">
+        <div class="author">
+          <div>
+            <div class="author-name">Xiaodong Zheng</div>
+            <div class="author-affiliation">Xi'an Jiaotong University</div>
+          </div>
+        </div>
+        <div class="author">
+          <div>
+            <div class="author-name">Shixuan Yu</div>
+            <div class="author-affiliation">Xi'an Jiaotong University</div>
+          </div>
+        </div>
+        <div class="author">
+          <div>
+            <div class="author-name">Hui Cao*</div>
+            <div class="author-affiliation">Xi'an Jiaotong University</div>
+          </div>
+        </div>
+        <div class="author">
+          <div>
+            <div class="author-name">Tianzhuo Shi</div>
+            <div class="author-affiliation">Xi'an Jiaotong University</div>
+          </div>
+        </div>
+        <div class="author">
+          <div>
+            <div class="author-name">Shuangsi Xue</div>
+            <div class="author-affiliation">Xi'an Jiaotong University</div>
+          </div>
+        </div>
+        <div class="author">
+          <div>
+            <div class="author-name">Tao Ding</div>
+            <div class="author-affiliation">Xi'an Jiaotong University</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA Buttons -->
+      <div class="cta-group">
+        <a href="https://ieeexplore.ieee.org/document/10879343" class="btn btn-primary" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          <span lang="en">Read Paper</span>
+          <span lang="zh">阅读论文</span>
+        </a>
+        <a href="https://github.com/XJTU-RL/PowerZoo" class="btn btn-secondary" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+          <span lang="en">View Code</span>
+          <span lang="zh">查看代码</span>
+        </a>
+        <a href="SHOM_Paper.pdf" class="btn btn-secondary" download>
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          <span lang="en">Download PDF</span>
+          <span lang="zh">下载 PDF</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+      <span lang="en">SCROLL</span>
+      <span lang="zh">滚动</span>
+    </div>
+  </section>
+
+  <!-- Abstract Section -->
+  <section class="section section-light" id="abstract">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">
+          <span lang="en">Abstract</span>
+          <span lang="zh">摘要</span>
+        </div>
+        <h2 class="section-title">
+          <span lang="en">Research Overview</span>
+          <span lang="zh">研究概述</span>
+        </h2>
+      </div>
+
+      <div class="abstract-content">
+        <div class="abstract-text reveal">
+          <p lang="en">
+            As power grids expand, maintaining stable voltage and minimizing losses become increasingly crucial. Meanwhile, the widespread use of heterogeneous devices in modern distribution systems necessitates effective multi-device coordination. This issue is exacerbated by the integration of intermittent renewable sources (e.g., solar and wind), which introduce voltage fluctuations.
+          </p>
+          <p lang="zh">
+            随着电网规模的扩大，维持稳定电压和最小化损耗变得越来越重要。同时，现代配电系统中异构设备的广泛使用需要有效的多设备协调。间歇性可再生能源（如太阳能和风能）的集成加剧了这一问题，引入了电压波动。
+          </p>
+
+          <p lang="en">
+            To tackle these challenges, this paper proposes a novel <strong>Sensitivity-based Heterogeneous Ordered Multi-agent Reinforcement Learning (SHOM)</strong> method for Volt-Var Control (VVC) in Active Distribution Networks (ADNs). By leveraging voltage-reactive sensitivity to explicitly guide sequential policy updates, SHOM ensures a monotonic improvement in control strategies under heterogeneous, networked constraints.
+          </p>
+          <p lang="zh">
+            为了应对这些挑战，本文提出了一种新型的<strong>基于灵敏度的异构有序多智能体强化学习（SHOM）</strong>方法，用于主动配电网（ADN）中的电压无功控制（VVC）。通过利用电压-无功灵敏度显式指导顺序策略更新，SHOM确保在异构、网络化约束下控制策略的单调改进。
+          </p>
+
+          <div class="keywords">
+            <span class="keyword" lang="en">Multi-agent RL</span>
+            <span class="keyword" lang="zh">多智能体强化学习</span>
+            <span class="keyword" lang="en">Volt-Var Control</span>
+            <span class="keyword" lang="zh">电压无功控制</span>
+            <span class="keyword" lang="en">Smart Grid</span>
+            <span class="keyword" lang="zh">智能电网</span>
+            <span class="keyword" lang="en">Heterogeneous</span>
+            <span class="keyword" lang="zh">异构系统</span>
+          </div>
+        </div>
+
+        <div class="abstract-visual reveal">
+          <img src="assets/images/CTDE_CHOM.png" alt="CTDE Framework with Sequential Updating">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Methodology Section -->
+  <section class="section section-dark" id="methodology">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">
+          <span lang="en">Methodology</span>
+          <span lang="zh">方法论</span>
+        </div>
+        <h2 class="section-title" style="color: var(--white);">
+          <span lang="en">Key Innovations</span>
+          <span lang="zh">核心创新</span>
+        </h2>
+        <p class="section-subtitle">
+          <span lang="en">Three breakthrough contributions to multi-agent reinforcement learning for power systems</span>
+          <span lang="zh">多智能体强化学习在电力系统中的三项突破性贡献</span>
+        </p>
+      </div>
+
+      <div class="method-grid">
+        <div class="method-card reveal">
+          <div class="method-icon">🔌</div>
+          <h3 lang="en">Heterogeneous Device Control</h3>
+          <h3 lang="zh">异构设备控制</h3>
+          <p lang="en">Unlike existing MARL algorithms limited to single device types, SHOM simultaneously controls regulators, capacitors, and batteries with different action spaces and constraints.</p>
+          <p lang="zh">与现有仅限于单一设备类型的MARL算法不同，SHOM可以同时控制具有不同动作空间和约束的调节器、电容器和电池。</p>
+        </div>
+
+        <div class="method-card reveal">
+          <div class="method-icon">🎯</div>
+          <h3 lang="en">CTDE Framework</h3>
+          <h3 lang="zh">集中训练分布式执行</h3>
+          <p lang="en">A centralized training and decentralized execution framework combining physical device characteristics with sequential update methods for robust distributed control.</p>
+          <p lang="zh">集中训练分布式执行框架，将物理设备特性与顺序更新方法深度结合，实现鲁棒的分布式控制。</p>
+        </div>
+
+        <div class="method-card reveal">
+          <div class="method-icon">📊</div>
+          <h3 lang="en">V-Q Sensitivity Ordering</h3>
+          <h3 lang="zh">V-Q灵敏度排序</h3>
+          <p lang="en">A novel order selector based on voltage-reactive power sensitivity that determines optimal agent update sequences for capturing temporal dynamics.</p>
+          <p lang="zh">基于电压-无功灵敏度的新型顺序选择器，确定最优的智能体更新顺序以捕获时序动态特性。</p>
+        </div>
+      </div>
+
+      <!-- Algorithm Visualization -->
+      <div class="algorithm-visual reveal">
+        <img src="assets/images/order_selector2.png" alt="Order Selector Mechanism">
+      </div>
+    </div>
+  </section>
+
+  <!-- Results Section -->
+  <section class="section section-light" id="results">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">
+          <span lang="en">Experiments</span>
+          <span lang="zh">实验结果</span>
+        </div>
+        <h2 class="section-title">
+          <span lang="en">Experimental Validation</span>
+          <span lang="zh">实验验证</span>
+        </h2>
+        <p class="section-subtitle">
+          <span lang="en">Comprehensive evaluation on IEEE 13-Bus, 34-Bus, and 123-Bus test feeders</span>
+          <span lang="zh">在IEEE 13节点、34节点和123节点测试馈线上的全面评估</span>
+        </p>
+      </div>
+
+      <div class="results-showcase">
+        <!-- Result 1: Performance Comparison -->
+        <div class="result-item reveal">
+          <div class="result-image">
+            <img src="assets/images/123bus_rewards.png" alt="123-Bus Performance Comparison">
+          </div>
+          <div class="result-content">
+            <h3 lang="en">Superior Convergence Performance</h3>
+            <h3 lang="zh">卓越的收敛性能</h3>
+            <p lang="en">SHOM converges to approximately -12.05 in the 123-Bus network, outperforming all other MARL algorithms including Qmix and HAPPO. The narrower confidence intervals indicate greater stability compared to PPO and SAC.</p>
+            <p lang="zh">SHOM在123节点网络中收敛至约-12.05，优于所有其他MARL算法，包括Qmix和HAPPO。相比PPO和SAC，更窄的置信区间表明更高的稳定性。</p>
+
+            <div class="stat-grid">
+              <div class="stat-item">
+                <div class="stat-value">-12.05</div>
+                <div class="stat-label" lang="en">Best Reward</div>
+                <div class="stat-label" lang="zh">最优奖励</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-value">5,000</div>
+                <div class="stat-label" lang="en">Steps to Converge</div>
+                <div class="stat-label" lang="zh">收敛步数</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Result 2: Power Loss -->
+        <div class="result-item reveal">
+          <div class="result-image">
+            <img src="assets/images/render_power_loss_kw_bar.png" alt="Power Loss Comparison">
+          </div>
+          <div class="result-content">
+            <h3 lang="en">Significant Power Loss Reduction</h3>
+            <h3 lang="zh">显著降低功率损耗</h3>
+            <p lang="en">SHOM achieves the lowest average line power losses at 0.7167kW, which is only 1/3 of other algorithms. The 24-hour deployment experiment demonstrates superior real-world performance.</p>
+            <p lang="zh">SHOM实现了最低的平均线路功率损耗0.7167kW，仅为其他算法的1/3。24小时部署实验证明了其卓越的实际性能。</p>
+
+            <div class="stat-grid">
+              <div class="stat-item">
+                <div class="stat-value">0.72</div>
+                <div class="stat-label" lang="en">kW Avg Loss</div>
+                <div class="stat-label" lang="zh">平均损耗(kW)</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-value">66%</div>
+                <div class="stat-label" lang="en">Loss Reduction</div>
+                <div class="stat-label" lang="zh">损耗降低</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Result 3: Voltage Control -->
+        <div class="result-item reveal">
+          <div class="result-image">
+            <img src="assets/images/bus_voltages_with_health.png" alt="Voltage Health Status">
+          </div>
+          <div class="result-content">
+            <h3 lang="en">Zero Voltage Violations</h3>
+            <h3 lang="zh">零电压越限</h3>
+            <p lang="en">Under SHOM control, BUS-890 experiences zero voltage violations throughout the day, maintaining voltage close to 1.0 p.u. Other algorithms show deviations up to 0.25 p.u. (PPO).</p>
+            <p lang="zh">在SHOM控制下，BUS-890全天零电压越限，电压保持在接近1.0标幺值。其他算法显示高达0.25标幺值的偏差（PPO）。</p>
+
+            <div class="stat-grid">
+              <div class="stat-item">
+                <div class="stat-value">0</div>
+                <div class="stat-label" lang="en">Violations</div>
+                <div class="stat-label" lang="zh">越限次数</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-value">2.25%</div>
+                <div class="stat-label" lang="en">&gt;1.05 p.u.</div>
+                <div class="stat-label" lang="zh">&gt;1.05标幺值</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Network Visualization -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">
+          <span lang="en">Test Systems</span>
+          <span lang="zh">测试系统</span>
+        </div>
+        <h2 class="section-title" style="color: var(--white);">
+          <span lang="en">IEEE Test Feeders</span>
+          <span lang="zh">IEEE测试馈线</span>
+        </h2>
+      </div>
+
+      <div class="abstract-content">
+        <div class="abstract-visual reveal">
+          <img src="assets/images/34BUS.jpg" alt="34-Bus Network Topology">
+        </div>
+        <div class="abstract-text reveal" style="color: var(--light-gray);">
+          <p lang="en">
+            The proposed SHOM algorithm is implemented on modified IEEE 13-Bus, 34-Bus, and 123-Bus test feeders adapted as Active Distribution Networks. The networks include heterogeneous controllable devices: voltage regulators with switchable taps, capacitor banks, and battery energy storage systems.
+          </p>
+          <p lang="zh">
+            所提出的SHOM算法在改进的IEEE 13节点、34节点和123节点测试馈线上实现，这些馈线被改造为主动配电网。网络包含异构可控设备：带可切换抽头的电压调节器、电容器组和电池储能系统。
+          </p>
+
+          <p lang="en" style="margin-top: var(--space-lg);">
+            Experiments use hourly load profiles from IEEE PES Test Feeder with control timescale set to one hour per step to align with steady-state analysis.
+          </p>
+          <p lang="zh" style="margin-top: var(--space-lg);">
+            实验使用IEEE PES测试馈线的每小时负荷曲线，控制时间尺度设置为每步一小时，以符合稳态分析要求。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Citation Section -->
+  <section class="section section-light" id="citation">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">
+          <span lang="en">Citation</span>
+          <span lang="zh">引用</span>
+        </div>
+        <h2 class="section-title">
+          <span lang="en">Cite This Work</span>
+          <span lang="zh">引用本文</span>
+        </h2>
+      </div>
+
+      <div class="citation-box reveal">
+        <div class="citation-content">
+          <pre class="citation-text">@article{zhengSensitivityBasedHeterogeneousOrdered2025,
+  author  = {Xiaodong Zheng and Shixuan Yu and Hui Cao and Tianzhuo Shi and Shuangsi Xue and Tao Ding},
+  title   = {Sensitivity-Based Heterogeneous Ordered Multi-Agent Reinforcement Learning for Distributed Volt-Var Control in Active Distribution Network},
+  journal = {IEEE Transactions on Smart Grid},
+  year    = {2025},
+  month   = {Feb},
+  doi     = {10.1109/TSG.2025.3540416},
+  issn    = {1949-3061},
+  url     = {https://ieeexplore.ieee.org/document/10879343}
+}</pre>
+          <button class="copy-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <span lang="en">Copy BibTeX</span>
+            <span lang="zh">复制 BibTeX</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <span lang="en">SHOM</span>
+        <span lang="zh">SHOM</span>
+      </div>
+      <div class="footer-links">
+        <a href="https://ieeexplore.ieee.org/document/10879343" target="_blank">
+          <span lang="en">IEEE Xplore</span>
+          <span lang="zh">IEEE Xplore</span>
+        </a>
+        <a href="https://github.com/XJTU-RL/PowerZoo" target="_blank">
+          <span lang="en">GitHub</span>
+          <span lang="zh">GitHub</span>
+        </a>
+        <a href="https://www.xjtu.edu.cn" target="_blank">
+          <span lang="en">Xi'an Jiaotong University</span>
+          <span lang="zh">西安交通大学</span>
+        </a>
+      </div>
+      <div class="footer-copyright">
+        <p lang="en">&copy; 2025 Shaanxi Key Laboratory of Smart Grid, Xi'an Jiaotong University</p>
+        <p lang="zh">&copy; 2025 陕西省智能电网重点实验室，西安交通大学</p>
+        <p lang="en" style="margin-top: 8px; opacity: 0.7;">Supported by National Natural Science Foundation of China (Grant 52277123)</p>
+        <p lang="zh" style="margin-top: 8px; opacity: 0.7;">国家自然科学基金资助项目（52277123）</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

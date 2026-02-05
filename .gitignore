@@ -2,6 +2,9 @@
 **/results/**
 .VSCodeCounter/
 
+# Paper source files (keep PDF in root for sharing)
+TSG_01383 Final/
+
 ##### Python.gitignore #####
 # Byte-compiled / optimized / DLL files
 __pycache__/
