@@ -608,6 +608,106 @@ body {
 }
 
 /* ============================================
+   NETWORK GRID (Test Feeders)
+   ============================================ */
+.network-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+}
+
+@media (max-width: 900px) {
+  .network-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.network-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: var(--space-lg);
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  transition: var(--transition-smooth);
+}
+
+.network-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.network-image {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: var(--space-md);
+  margin-bottom: var(--space-md);
+  border: 1px solid var(--light-gray);
+}
+
+.network-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.network-card h4 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--primary-dark);
+  margin-bottom: var(--space-xs);
+}
+
+.network-card p {
+  color: var(--medium-gray);
+  font-size: 1rem;
+}
+
+/* Loadshape Section */
+.loadshape-section {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: var(--space-xl);
+  align-items: center;
+  margin-top: var(--space-xl);
+  padding: var(--space-xl);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 900px) {
+  .loadshape-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+.loadshape-content h3 {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--white);
+  margin-bottom: var(--space-md);
+}
+
+.loadshape-content p {
+  color: var(--light-gray);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.loadshape-image {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: var(--space-md);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.loadshape-image img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* ============================================
    CITATION SECTION
    ============================================ */
 .citation-box {

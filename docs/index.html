@@ -333,26 +333,61 @@
           <span lang="en">IEEE Test Feeders</span>
           <span lang="zh">IEEE测试馈线</span>
         </h2>
+        <p class="section-subtitle">
+          <span lang="en">Validated on IEEE 13-Bus, 34-Bus, and 123-Bus distribution networks</span>
+          <span lang="zh">在IEEE 13节点、34节点和123节点配电网络上验证</span>
+        </p>
       </div>
 
-      <div class="abstract-content">
-        <div class="abstract-visual reveal">
-          <img src="assets/images/34BUS.jpg" alt="34-Bus Network Topology">
+      <!-- Network Topology Grid -->
+      <div class="network-grid reveal">
+        <div class="network-card">
+          <div class="network-image">
+            <img src="assets/images/13BUS.jpg" alt="13-Bus Network Topology">
+          </div>
+          <h4 lang="en">IEEE 13-Bus</h4>
+          <h4 lang="zh">IEEE 13节点</h4>
+          <p lang="en">Small-scale test feeder</p>
+          <p lang="zh">小规模测试馈线</p>
         </div>
-        <div class="abstract-text reveal" style="color: var(--light-gray);">
+        <div class="network-card">
+          <div class="network-image">
+            <img src="assets/images/34BUS.jpg" alt="34-Bus Network Topology">
+          </div>
+          <h4 lang="en">IEEE 34-Bus</h4>
+          <h4 lang="zh">IEEE 34节点</h4>
+          <p lang="en">Medium-scale test feeder</p>
+          <p lang="zh">中等规模测试馈线</p>
+        </div>
+        <div class="network-card">
+          <div class="network-image">
+            <img src="assets/images/123BUS.jpg" alt="123-Bus Network Topology">
+          </div>
+          <h4 lang="en">IEEE 123-Bus</h4>
+          <h4 lang="zh">IEEE 123节点</h4>
+          <p lang="en">Large-scale test feeder</p>
+          <p lang="zh">大规模测试馈线</p>
+        </div>
+      </div>
+
+      <!-- Load Profile -->
+      <div class="loadshape-section reveal">
+        <div class="loadshape-content">
+          <h3 lang="en">Load Profile Data</h3>
+          <h3 lang="zh">负荷曲线数据</h3>
           <p lang="en">
-            The proposed SHOM algorithm is implemented on modified IEEE 13-Bus, 34-Bus, and 123-Bus test feeders adapted as Active Distribution Networks. The networks include heterogeneous controllable devices: voltage regulators with switchable taps, capacitor banks, and battery energy storage systems.
+            The proposed SHOM algorithm is implemented on modified IEEE test feeders adapted as Active Distribution Networks.
+            The networks include heterogeneous controllable devices: voltage regulators with switchable taps, capacitor banks, and battery energy storage systems.
+            Experiments use hourly load profiles from IEEE PES Test Feeder with control timescale set to one hour per step.
           </p>
           <p lang="zh">
-            所提出的SHOM算法在改进的IEEE 13节点、34节点和123节点测试馈线上实现，这些馈线被改造为主动配电网。网络包含异构可控设备：带可切换抽头的电压调节器、电容器组和电池储能系统。
+            所提出的SHOM算法在改进的IEEE测试馈线上实现，这些馈线被改造为主动配电网。
+            网络包含异构可控设备：带可切换抽头的电压调节器、电容器组和电池储能系统。
+            实验使用IEEE PES测试馈线的每小时负荷曲线，控制时间尺度设置为每步一小时。
           </p>
-
-          <p lang="en" style="margin-top: var(--space-lg);">
-            Experiments use hourly load profiles from IEEE PES Test Feeder with control timescale set to one hour per step to align with steady-state analysis.
-          </p>
-          <p lang="zh" style="margin-top: var(--space-lg);">
-            实验使用IEEE PES测试馈线的每小时负荷曲线，控制时间尺度设置为每步一小时，以符合稳态分析要求。
-          </p>
+        </div>
+        <div class="loadshape-image">
+          <img src="assets/images/loadshape.png" alt="Load Shape Heatmap">
         </div>
       </div>
     </div>
